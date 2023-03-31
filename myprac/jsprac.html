@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+    let obj = {
+        a : this ,
+        func : function(){
+            console.log(this)
+        } ,
+        func1 :  ()=>{
+            console.log(this)
+        } 
+    }
+    let obj1 = {
+        one : 1,
+        two : 2,
+        three : 3,
+        four : 4,
+    }
+    
+    for(var itr of Object.keys(obj1)){
+        console.log(itr,":",obj1[itr]) ;
+    }
+    // obj.func();
+
+    // obj.func1();
+    // console.log(obj.a)
+</script>
+</html>
