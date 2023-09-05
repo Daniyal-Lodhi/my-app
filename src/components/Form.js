@@ -23,60 +23,61 @@ export default function Form(props) {
         msg.text = text;
         window.speechSynthesis.speak(msg); 
       }
-    const [btn,setbtn] = useState("Enable dark mode")
-    const [myStyle,setmyStyle] = useState({
-        color : 'black' ,
-        backgorundColor : 'white'
-    })
-    const WordCounterCorrector = ()=>{
+    // const [btn,setbtn] = useState("Enable dark mode")
+    // const [ = useState({
+    //     color : 'black' ,
+    //     backgorundColor : 'white'
+    // })
+    /*const WordCounterCorrector = ()=>{
         if (text=== "" || text.charAt(text.length-1)===" "){
             return(text.split(" ").length-1)
         }
         else{
             return(text.split(" ").length)
         }
-    }
-    const themechanger = ()=>{
-        if (myStyle.color === 'black'){
-            setmyStyle({
-                color : 'white' ,
-                backgroundColor : 'black'
-            })
-        setbtn("Enable white mode");
-        }
-        else{
-            setmyStyle({
-                color : 'black' ,
-                backgroundColor : 'white'
-            })
-        setbtn("Enable dark mode");
+    }*/
+    // const themechanger = ()=>{
+    //     if (props.mode === 'light'){
+    //         // setmyStyle({
+    //         //     color : 'white' ,
+    //         //     backgroundColor : 'black'
+    //         // })
+    //     // setbtn("Enable dark mode");
+    //     }
+    //     else{
+    //         // setmyStyle({
+    //         //     color : 'black' ,
+    //         //     backgroundColor : 'white'
+    //         // })
 
-        }
-    }
-      
-
-
+    //     }
+    // }
+    var myStyles = {
+        color: props.mode === 'dark'?'white':'black' ,
+        backgroundColor: props.mode === 'dark'?'black':'white',
+        
+      }
     return (
         <>
-        <div>
+        <div >
 
-            <h1>{props.heading}</h1>
-            <div className="mb-3">
-                <textarea className="form-control" onChange={handleOnChange}  id="myBox" rows="10" value={text} style={myStyle}></textarea>
+            <h1 >{props.heading}</h1>
+            <div className="mb-3" >
+                <textarea className="form-control" style={myStyles} onChange={handleOnChange}  id="myBox" rows="10" value={text}  ></textarea>
             </div>
-            <button className="btn btn-primary" onClick={uppercase} >Convert to Uppercase</button>
-            <button type="submit" onClick={speak} className="btn btn-warning mx-2 my-2">Speak</button>
-            <button className="btn btn-primary" onClick={themechanger}>{btn}</button>
+            <button className="btn btn-primary border border-light" onClick={uppercase} >Convert to Uppercase</button>
+            <button type="submit" onClick={speak} className="btn btn-primary mx-2 my-2 border border-light">Speak</button>
 
 
         </div>
 
-        <div className="container">
+        <div className="container" style={myStyles}> 
             <h1>Your text summary</h1>
-            <p>{WordCounterCorrector()} word and {text.length} characters</p>
+            <p>{text.split(/[\s+]/).filter((element)=>{return element.length !== 0}).length} word and {text.length} characters</p>
             <p>{text.length * 0.03} seconds required to read</p>
         </div>
         </>
+        
     );
 }
 Form.defaultProps = {
