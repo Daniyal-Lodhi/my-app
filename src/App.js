@@ -22,15 +22,8 @@ function App() {
   }
   const [Mode, setMode] = useState('light')
   const [txtTheme, setTxtTheme] = useState('dark')
-  const removeCLass = ()=>{
-    document.body.classList.remove('bg-primary');
-    document.body.classList.remove('bg-warning');
-    document.body.classList.remove('bg-danger');
-    document.body.classList.remove('bg-success');
-  }
+  
   const toggleMode = (cls) => {
-    removeCLass();
-    document.body.classList.add('bg-'+cls);
     if (Mode === 'light') {
       setMode('dark')
       setTxtTheme('light')
@@ -57,7 +50,7 @@ function App() {
         <Alert alert={alert} />
         <Routes>
           <Route exact path="/" element={
-            <div className="container">
+            <div className="container "   >
               <Form alert={showAlert} heading="Enter the text to analyze" mode = {Mode}></Form>        
             </div>
           } />

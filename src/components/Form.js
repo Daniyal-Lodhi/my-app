@@ -1,9 +1,8 @@
 // Shortcut rfc
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 // Shortcut impt
 // import PropTypes from 'prop-types'
-
 
 export default function Form(props) {
  const[text,setText] = useState("") ;
@@ -28,14 +27,14 @@ export default function Form(props) {
     //     color : 'black' ,
     //     backgorundColor : 'white'
     // })
-    /*const WordCounterCorrector = ()=>{
-        if (text=== "" || text.charAt(text.length-1)===" "){
-            return(text.split(" ").length-1)
-        }
-        else{
-            return(text.split(" ").length)
-        }
-    }*/
+    // const WordCounterCorrector = ()=>{
+    //     if (text=== "" || text.charAt(text.length-1)===" "){
+    //         return(text.split(" ").length-1)
+    //     }
+    //     else{
+    //         return(text.split(" ").length)
+    //     }
+    }
     // const themechanger = ()=>{
     //     if (props.mode === 'light'){
     //         // setmyStyle({
@@ -55,17 +54,22 @@ export default function Form(props) {
     var myStyles = {
         color: props.mode === 'dark'?'white':'black' ,
         backgroundColor: props.mode === 'dark'?'black':'white',
-        
       }
+    // const bgcolor = ()=>{
+    //     myStyles.backgroundColor==='dark'?document.body.style.backgroundColor = 'dark':document.body.style.backgroundColor = 'white'
+    // }
+    
+
     return (
         <>
         <div >
 
-            <h1 >{props.heading}</h1>
+            <h1 style={myStyles}>{props.heading}</h1>
             <div className="mb-3" >
                 <textarea className="form-control" style={myStyles} onChange={handleOnChange}  id="myBox" rows="10" value={text}  ></textarea>
             </div>
             <button className="btn btn-primary border border-light" onClick={uppercase} >Convert to Uppercase</button>
+            
             <button type="submit" onClick={speak} className="btn btn-primary mx-2 my-2 border border-light">Speak</button>
 
 
