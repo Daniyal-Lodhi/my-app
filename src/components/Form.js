@@ -1,5 +1,5 @@
 // Shortcut rfc
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 
 // Shortcut impt
 // import PropTypes from 'prop-types'
