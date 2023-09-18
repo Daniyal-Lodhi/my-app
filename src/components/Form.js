@@ -23,6 +23,12 @@ export default function Form(props) {
         window.speechSynthesis.speak(msg); 
       }
     
+  
+    
+    var myStyles = {
+        color: props.mode === 'dark'?'white':'black' ,
+        backgroundColor: props.mode === 'dark'?'black':'white',
+      }
     
 
     return (
