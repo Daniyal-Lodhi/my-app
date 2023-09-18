@@ -22,42 +22,7 @@ export default function Form(props) {
         msg.text = text;
         window.speechSynthesis.speak(msg); 
       }
-    // const [btn,setbtn] = useState("Enable dark mode")
-    // const [ = useState({
-    //     color : 'black' ,
-    //     backgorundColor : 'white'
-    // })
-    // const WordCounterCorrector = ()=>{
-    //     if (text=== "" || text.charAt(text.length-1)===" "){
-    //         return(text.split(" ").length-1)
-    //     }
-    //     else{
-    //         return(text.split(" ").length)
-    //     }
-    }
-    // const themechanger = ()=>{
-    //     if (props.mode === 'light'){
-    //         // setmyStyle({
-    //         //     color : 'white' ,
-    //         //     backgroundColor : 'black'
-    //         // })
-    //     // setbtn("Enable dark mode");
-    //     }
-    //     else{
-    //         // setmyStyle({
-    //         //     color : 'black' ,
-    //         //     backgroundColor : 'white'
-    //         // })
-
-    //     }
-    // }
-    var myStyles = {
-        color: props.mode === 'dark'?'white':'black' ,
-        backgroundColor: props.mode === 'dark'?'black':'white',
-      }
-    // const bgcolor = ()=>{
-    //     myStyles.backgroundColor==='dark'?document.body.style.backgroundColor = 'dark':document.body.style.backgroundColor = 'white'
-    // }
+    
     
 
     return (
